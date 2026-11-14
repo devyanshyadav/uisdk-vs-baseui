@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UI SDK vs Base UI — emoji picker
 
-## Getting Started
+Side-by-side emoji pickers in Next.js: one built with a UI SDK custom primitive, one with [@base-ui/react](https://base-ui.com). Both share [`app/lib/emoji-catalog.ts`](./app/lib/emoji-catalog.ts).
 
-First, run the development server:
+## What's inside
+
+| Path | Role |
+| --- | --- |
+| [`app/primitives/emoji-picker.ts`](./app/primitives/emoji-picker.ts) | UI SDK primitive (roving focus, typeahead, `agent`) |
+| [`app/components/emoji-picker.tsx`](./app/components/emoji-picker.tsx) | React UI for the UI SDK primitive |
+| [`app/components/baseui-emoji-picker.tsx`](./app/components/baseui-emoji-picker.tsx) | Base UI version (popover + grid buttons) |
+| [`app/agent/agent-console.tsx`](./app/agent/agent-console.tsx) | Terminal UI for `snapshot` / `query` / `act` |
+| [`app/page.tsx`](./app/page.tsx) | Side-by-side comparison layout |
+
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+bun run test
+```
 
-## Learn More
+Includes agent bridge tests for the UI SDK emoji picker (`createAgent` from `@ui-sdk/react/agent`).
 
-To learn more about Next.js, take a look at the following resources:
+## Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js 16, React 19, Tailwind CSS 4
+- `@ui-sdk/react` + `@ui-sdk/core` (beta)
+- `@base-ui/react`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Learn more
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [UI SDK](https://ui-sdk.dev)
+- [Base UI](https://base-ui.com)
