@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "uisdk",
+      "name": "uisdk-vs-baseui",
       "dependencies": {
         "@base-ui/react": "^1.9.0",
         "@ui-sdk/core": "^0.1.0-beta.1",
