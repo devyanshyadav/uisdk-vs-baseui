@@ -62,7 +62,6 @@ const smileys: EmojiItem[] = [
   { value: "😪", label: "Sleepy" },
   { value: "🤤", label: "Drooling" },
   { value: "😴", label: "Sleeping" },
-  { value: "🔥", label: "Fire" },
 ];
 
 const people: EmojiItem[] = [
